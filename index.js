@@ -1,6 +1,6 @@
 function renderOneMeal(menu){
     // building the menu
-    let card = document.createElement('li')
+    let card = document.createElement('table')
     card.className = 'card'
     card.innerHTML = `
     <img src = "${menu.img}">
