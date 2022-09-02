@@ -3,15 +3,21 @@ function renderOneMeal(menu){
     let card = document.createElement('table')
     card.className = 'card'
     card.innerHTML = `
-    <img src = "${menu.img}">
+    <div class="section-center">
+    <article class="menu-item">
+    <img src = "${menu.img}" alt="menu item" class="photo" >
     <div class = "content">
+    <header>
     <h4>${menu.title} </h4>
-    <h4>${menu.price} </h4>
+    <h4 class="price"> $${menu.price} </h4>
+    </header>
     <h4>${menu.category} </h4>
-    <p> ${menu.desc} </p>
+    <p class "item-text"> ${menu.desc} </p>
     </div>
     <div class = "button">
     <button> Place Order</button>
+    </article>
+    </div>
     `
     // Add menu to DOM
     document.querySelector("#menu-list").appendChild(card)
