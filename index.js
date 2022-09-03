@@ -16,8 +16,9 @@ function renderOneMeal(menu){
     </header>
     <h4>${menu.category} </h4>
     <p class "item-text"> ${menu.desc} </p>
+
     <div class = "button">
-    <button> Place Order</button>
+    <button onclick="myFunction()"> Place Order</button>
     <br>
     </div>
     </article>
@@ -27,6 +28,20 @@ function renderOneMeal(menu){
     document.querySelector("#menu-list").appendChild(card)
 
 }
+
+function myFunction() {
+  alert("Thank You, Your Order Has Been Taken!");}
+
+
+let counter = document.getElementById("counter")
+let result = document.getElementById("result")
+let count = 1
+
+counter.addEventListener("click", () => {
+  count += 1
+  result.innerHTML = count
+})
+
 function menu (){ fetch('https://thawing-atoll-64866.herokuapp.com/menu')
 .then(response => response.json()) 
 .then(menuData => menuData.forEach(menu => renderOneMeal(menu)))
@@ -93,3 +108,4 @@ function menu (){ fetch('https://thawing-atoll-64866.herokuapp.com/menu')
         
 //     })
 // })
+
