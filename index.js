@@ -41,6 +41,17 @@ counter.addEventListener("click", () => {
   count += 1
   result.innerHTML = count
 })
+const form = document.getElementById("review-form");
+form.onsubmit=handleReview
+function handleReview(event){
+   event.preventDefault()
+  //  console.log("form submitted")
+const ul = document.getElementById("review-list");
+    let li = document.createElement("li");
+        li.appendChild(document.createTextNode(review));
+        ul.appendChild(li);
+}
+    
 
 function menu (){ fetch('https://thawing-atoll-64866.herokuapp.com/menu')
 .then(response => response.json()) 
