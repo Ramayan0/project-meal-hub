@@ -47,7 +47,7 @@ function handleReview(event){
    event.preventDefault()
   //  console.log("form submitted")
 const ul = document.getElementById("review-list");
-    let li = document.createElement("li");
+    let li = document.createElement("li".value);
         li.appendChild(document.createTextNode(review));
         ul.appendChild(li);
 }
