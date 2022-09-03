@@ -257,3 +257,12 @@ console.log(item);
 
 // sectionCenter.innerHTML = displayMenu;
 });
+
+<div class= "form">
+    <h3>Customer Reviews</h3>
+     <form id="review-form">
+       <label for="review">Your Review:</label>
+       <textarea id="review"></textarea>
+       <button type="submit">Add review</button>
+     </form>
+     </div>

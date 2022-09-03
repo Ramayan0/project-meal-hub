@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded", function(){
+    menu();
+})
 function renderOneMeal(menu){
     // building the menu
     let card = document.createElement('table')
@@ -13,9 +16,10 @@ function renderOneMeal(menu){
     </header>
     <h4>${menu.category} </h4>
     <p class "item-text"> ${menu.desc} </p>
-    </div>
     <div class = "button">
     <button> Place Order</button>
+    <br>
+    </div>
     </article>
     </div>
     `
@@ -23,16 +27,69 @@ function renderOneMeal(menu){
     document.querySelector("#menu-list").appendChild(card)
 
 }
-const menu = fetch('https://thawing-atoll-64866.herokuapp.com/menu')
+function menu (){ fetch('https://thawing-atoll-64866.herokuapp.com/menu')
 .then(response => response.json()) 
 .then(menuData => menuData.forEach(menu => renderOneMeal(menu)))
+}
+// filter item
+// const filterBtn = document.querySelectorAll(".filter-btn")
+// filterBtn.forEach(function (btn) {
+//     btn.addEventListener("click", function(e) {
+//         const category = e.currentTarget.dataset.id;
+//         const menuCategory = menu.filter(function (menuItem) {
+//             if(menuItem.category === category){
+//                return menuItem 
+//             }  
+//         })
+//         if(category === "all"){
+//           menu()  
+//         }
+        
+//     })
+// })
 
-// function getCard(){
-//     const menu = fetch('https://thawing-atoll-64866.herokuapp.com/menu')
-//     .then(response => response.json()) 
-//     .then(json => console.log(json))
+// const sectionCenter = document.querySelector(".section-center");
 
-// }
-// function initializer (){
-//     getCard()
-// }
+// document.addEventListener("DOMContentLoaded", function () {
+//  fetch('https://thawing-atoll-64866.herokuapp.com/menu')
+// .then(response => response.json()) 
+// .then(menuData => {
+//   let displayMenu = menuData.map(function (item) {
+//     // console.log(item);
+
+//     return `<article class="menu-item">
+//           <img src=${item.img} alt=${item.title} class="photo" />
+//           <div class="item-info">
+//             <header>
+//               <h4>${item.title}</h4>
+//               <h4 class="price">$${item.price}</h4>
+//             </header>
+//             <p class="item-text">
+//               ${item.desc}
+//             </p>
+//           </div>
+//         </article>`;
+// });
+// displayMenu = displayMenu.join("");
+// // console.log(displayMenu);
+
+// sectionCenter.innerHTML = displayMenu;
+// });
+
+// });
+// // // filter item
+// const filterBtn = document.querySelectorAll(".filter-btn")
+// filterBtn.forEach(function (btn) {
+//     btn.addEventListener("click", function(e) {
+//         const category = e.currentTarget.dataset.id;
+//         const menuCategory = displayMenu.filter(function (menuItem) {
+//             if(menuItem.category === category){
+//                return menuItem 
+//             }  
+//         })
+//         if(category === "all"){
+//           menu()  
+//         }
+        
+//     })
+// })
