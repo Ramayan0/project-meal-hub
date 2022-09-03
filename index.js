@@ -40,21 +40,42 @@ counter.addEventListener("click", () => {
   count += 1
   result.innerHTML = count
 })
-const form = document.getElementById("review-form");
-form.onsubmit=handleReview
-function handleReview(event){
-   event.preventDefault()
-  //  console.log("form submitted")
-const ul = document.getElementById("review-list");
-    let li = document.createElement("li".value);
-        li.appendChild(document.createTextNode(review));
-        ul.appendChild(li);
-}
+// const form = document.getElementById("review-form");
+// form.onsubmit=handleReview
+// function handleReview(event){
+//    event.preventDefault()
+//   //  console.log("form submitted")
+// const ul = document.getElementById("review-list").value
+//     let li = document.createElement("li")
+//         li.appendChild(document.createTextNode(review));
+//         ul.appendChild(li);
+// }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const newTaskForm = document.getElementById("create-task-form");
+  newTaskForm.addEventListener("submit", createNewTask);
+});
+
+const createNewTask = event => {
+  event.preventDefault();
+  const newTaskDescription = document.getElementById("new-task-description");
+  const newTask = document.createElement("li");
+  newTask.innerText = newTaskDescription.value;
+
+  appendNewTask(newTask);
+  event.target.reset();
+};
+
+const appendNewTask = task => {
+  document.getElementById("tasks").appendChild(task);
+};
     
 
 fetch('https://thawing-atoll-64866.herokuapp.com/menu')
 .then(response => response.json()) 
-.then(menuData => menuData.forEach((menu) => renderOneMeal(menu)))
+.then(menuData => menuData.forEach((menu) => renderOneMeal(menu))
+
+)
 
 
 function renderAllMeal(menu){
