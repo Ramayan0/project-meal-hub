@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
-    menu();
+    // menu();
 })
 function renderOneMeal(menu){
     // building the menu
@@ -19,7 +19,6 @@ function renderOneMeal(menu){
 
     <div class = "button">
     <button onclick="myFunction()"> Place Order</button>
-    <br>
     </div>
     </article>
     </div>
@@ -53,23 +52,31 @@ const ul = document.getElementById("review-list");
 }
     
 
-function menu (){ fetch('https://thawing-atoll-64866.herokuapp.com/menu')
+fetch('https://thawing-atoll-64866.herokuapp.com/menu')
 .then(response => response.json()) 
-.then(menuData => menuData.forEach(menu => renderOneMeal(menu)))
+.then(menuData => menuData.forEach((menu) => renderOneMeal(menu)))
+
+
+function renderAllMeal(menu){
+  const filterdData = menuData.filter(menuItem => {
+    menu.category = "breakfast";
+    console.log(filterdData);
+  })
 }
+
 // filter item
 // const filterBtn = document.querySelectorAll(".filter-btn")
 // filterBtn.forEach(function (btn) {
 //     btn.addEventListener("click", function(e) {
 //         const category = e.currentTarget.dataset.id;
-//         const menuCategory = menu.filter(function (menuItem) {
-//             if(menuItem.category === category){
-//                return menuItem 
-//             }  
-//         })
-//         if(category === "all"){
-//           menu()  
-//         }
+//         const menuCategory = menuData.filter( menuItem => menu.category = breakfast {
+//             // if(menuItem.category === category){
+//         //        return menuItem 
+//         //     }  
+//         // })
+//         // if(category === "all"){
+//         //   menu()  
+//         // })
         
 //     })
 // })
@@ -119,4 +126,8 @@ function menu (){ fetch('https://thawing-atoll-64866.herokuapp.com/menu')
         
 //     })
 // })
+const button = document.querySelector('.btn')
 
+button.addEventListener('click', () => {
+    button.classList.toggle('liked')
+})
