@@ -32,14 +32,6 @@ function myFunction() {
   alert("Thank You, Your Order Has Been Taken!");
 }
 
-let counter = document.getElementById("counter");
-let result = document.getElementById("result");
-let count = 1;
-
-counter.addEventListener("click", () => {
-  count += 1;
-  result.innerHTML = count;
-});
 // const form = document.getElementById("review-form");
 // form.onsubmit=handleReview
 // function handleReview(event){
