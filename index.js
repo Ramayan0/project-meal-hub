@@ -59,11 +59,12 @@ fetch("https://thawing-atoll-64866.herokuapp.com/menu")
     <br>
     <h4>${menu.category} </h4>
     <p class "item-text"> ${menu.desc} </p>
-
+    <div class = likee>
     <div class = "button">
     <button onclick="myFunction()"> Place Order</button>
     </div>
     <br>
+   
     <button class="btn btn-like">
     <span class="btn-icon btn--icon-default">
       <span class="fa fa-heart"></span>
@@ -78,7 +79,7 @@ fetch("https://thawing-atoll-64866.herokuapp.com/menu")
       Like
     </span>
   </button>
-
+  </div>
     </article>
     </div>
     `;
