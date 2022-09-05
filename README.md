@@ -266,3 +266,131 @@ console.log(item);
        <button type="submit">Add review</button>
      </form>
      </div>
+
+
+
+
+
+
+
+
+     @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+.title{
+    text-align: center
+} 
+body {
+    font-family: "Open Sans", sans-serif;
+    background: hsl(180, 32%, 86%);
+    color: hsl(210, 31%, 10%);
+    line-height: 1.5;
+    font-size: 0.875rem;
+    
+  }
+  .word{
+    text-align: center;
+    text-transform: uppercase;
+    color: #e09018;
+    font-size: 20px;
+    
+  }
+.btn-container{
+    text-align: center;
+    margin: auto;
+    
+} 
+.filter-btn {
+  background: transparent;
+  border-color: #c59d5f;
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin: 0 0.5rem;
+  letter-spacing: 1px;
+  border-radius: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  /* color: #c59d5f; */
+  cursor: pointer;
+  transition: var(--transition);
+
+}
+.filter-btn:hover {
+  background: #c59d5f;
+  color: var(--clr-white);
+}
+.cards{
+  width: 10rem;
+  /* flex-direction: row; */
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:10px;
+
+}
+/* section */
+ .section {
+  padding: 2rem 0;
+}
+ 
+.section-center {
+  width: 40; 
+  max-width: 1000px;
+  display: grid;
+  gap: 3rem 2rem;
+  justify-items: center;
+} 
+
+ .menu-item { 
+  display: grid;
+  gap: 2rem 2rem;
+  max-width: 250rem;
+  
+} 
+.photo {
+  object-fit: cover;
+  height: 200px;
+  width: 200;
+   border: 0.25rem solid #c59d5f; 
+  border-radius: 0.5rem; 
+  
+ } 
+
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px dotted var(--clr-grey-5);
+}
+h4 {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-transform: capitalize;
+  
+
+}
+.price {
+  color: #c59d5f;
+}
+.item-text {
+  margin-bottom: 0;
+  padding-top: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-item {
+    grid-template-columns: 300px 1fr;
+     gap: 0 2.0rem; 
+    max-width: 100rem; 
+  }
+  .photo {
+    height: 175px;
+    /* width: 150; */
+  }
+}
+@media screen and (min-width: 300px) {
+  .section-center {
+    width: 50vw;
+    grid-template-columns: 2fr 1fr;
+  }
+  .photo {
+    height: 200px;
+    
+  }
+}

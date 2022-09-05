@@ -56,27 +56,17 @@ fetch("https://thawing-atoll-64866.herokuapp.com/menu")
     <h4>${menu.title} </h4>
     <h4 class="price"> $${menu.price} </h4>
     </header>
-    <br>
     <h4>${menu.category} </h4>
     <p class "item-text"> ${menu.desc} </p>
-    <div class = likee>
-    <div class = "button">
-    <button onclick="myFunction()"> Place Order</button>
-    </div>
-    <br>
-   
+    <div class = "likee">
+ 
+    <button class = "place-order" onclick="myFunction()"> Place Order</button>
     <button class="btn btn-like">
     <span class="btn-icon btn--icon-default">
       <span class="fa fa-heart"></span>
     </span>
     <span class="btn-icon btn--icon-liked">
       <span class="fa fa-heart"></span>
-    </span>
-    <span class="btn-content  btn-content--liked">
-      Liked
-    </span>
-    <span class="btn-content btn-content--default">
-      Like
     </span>
   </button>
   </div>
@@ -86,11 +76,10 @@ fetch("https://thawing-atoll-64866.herokuapp.com/menu")
           // Add menu to DOM
           document.querySelector("#menu-list").appendChild(card);
         });
+        if (category === "all") {
+          return menuData;
+        }
         likeBtn();
-
-        // if (category === "all") {
-        //   menu();
-        // }
       });
     });
   });
