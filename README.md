@@ -1,5 +1,40 @@
 # project-meal-hub
 
+Meal Hub
+
+Meal Hub is an Application for displaying menu for diffrent meals.
+
+Author Hamsa Hassan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="section-center">
         <!-- single item -->
         <article class="menu-item">

@@ -1,37 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
   // menu();
 });
-// function renderOneMeal(menu) {
-//   // building the menu
-//   let card = document.createElement("table");
-//   card.className = "card";
-//   card.innerHTML = `
-//     <div class="section-center">
-//     <article class="menu-item">
-//     <img src = "${menu.img}" alt="menu item" class="photo" >
-//     <div class = "content">
-//     <header>
-//     <h4>${menu.title} </h4>
-//     <h4 class="price"> $${menu.price} </h4>
-//     </header>
-//     <h4>${menu.category} </h4>
-//     <p class "item-text"> ${menu.desc} </p>
+function renderOneMeal(menu) {
+  // building the menu
+  let card = document.createElement("table");
+  card.className = "card";
+  // card.style.display = "none";
+  card.innerHTML = `
+    <div class="section-center">
+    <article class="menu-item">
+    <img src = "${menu.img}" alt="menu item" class="photo" >
+    <div class = "content">
+    <header>
+    <h4>${menu.title} </h4>
+    <h4 class="price"> $${menu.price} </h4>
+    </header>
+    <h4>${menu.category} </h4>
+    <p class "item-text"> ${menu.desc} </p>
 
-//     <div class = "button">
-//     <button onclick="myFunction()"> Place Order</button>
-//     </div>
-//     </article>
-//     </div>
-//     `;
-//   // Add menu to DOM
-//   document.querySelector("#menu-list").appendChild(card);
-// }
+    <div class = "button">
+    <button onclick="myFunction()"> Place Order</button>
+    </div>
+    </article>
+    </div>
+    `;
+  // Add menu to DOM
+  document.querySelector("#menu-list").appendChild(card);
+  likeBtn();
+}
 
 fetch("https://thawing-atoll-64866.herokuapp.com/menu")
   .then((response) => response.json())
   .then((menuData) => {
-    // menuData.forEach((menu) =>
-    // renderOneMeal(menu));
+    menuData.forEach((menu) => renderOneMeal(menu));
 
     const filterBtn = document.querySelectorAll(".filter-btn");
     filterBtn.forEach(function (btn) {
@@ -48,38 +49,37 @@ fetch("https://thawing-atoll-64866.herokuapp.com/menu")
           card.innerHTML = "";
           card.className = "card";
           card.innerHTML = `
-    <div class="section-center">
-    <article class="menu-item">
-    <img src = "${menu.img}" alt="menu item" class="photo" >
-    <div class = "content">
-    <header>
-    <h4>${menu.title} </h4>
-    <h4 class="price"> $${menu.price} </h4>
-    </header>
-    <h4>${menu.category} </h4>
-    <p class "item-text"> ${menu.desc} </p>
-    <div class = "likee">
- 
-    <button class = "place-order" onclick="myFunction()"> Place Order</button>
-    <button class="btn btn-like">
-    <span class="btn-icon btn--icon-default">
-      <span class="fa fa-heart"></span>
-    </span>
-    <span class="btn-icon btn--icon-liked">
-      <span class="fa fa-heart"></span>
-    </span>
-  </button>
-  </div>
-    </article>
+      <div class="section-center">
+      <article class="menu-item">
+      <img src = "${menu.img}" alt="menu item" class="photo" >
+      <div class = "content">
+      <header>
+      <h4>${menu.title} </h4>
+      <h4 class="price"> $${menu.price} </h4>
+      </header>
+      <h4>${menu.category} </h4>
+      <p class "item-text"> ${menu.desc} </p>
+      <div class = "likee">
+
+      <button class = "place-order" onclick="myFunction()"> Place Order</button>
+      <button class="btn btn-like">
+      <span class="btn-icon btn--icon-default">
+        <span class="fa fa-heart"></span>
+      </span>
+      <span class="btn-icon btn--icon-liked">
+        <span class="fa fa-heart"></span>
+      </span>
+    </button>
     </div>
-    `;
+      </article>
+      </div>
+      `;
           // Add menu to DOM
           document.querySelector("#menu-list").appendChild(card);
         });
         if (category === "all") {
           return menuData;
         }
-        likeBtn();
       });
     });
   });
