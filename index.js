@@ -33,9 +33,17 @@ function renderOneMeal(menus) {
   </header>
   <h4>${menu.category} </h4>
   <p class "item-text"> ${menu.desc} </p>
+    <div class = "likee">
+    <button class = "place-order" onclick="myFunction()"> Place Order</button>
+    <button class="btn btn-like">
+    <span class="btn-icon btn--icon-default">
+      <span class="fa fa-heart"></span>
+    </span>
+    <span class="btn-icon btn--icon-liked">
+      <span class="fa fa-heart"></span>
+    </span>
+  </button>
 
-  <div class = "button">
-  <button onclick="myFunction()"> Place Order</button>
   </div>
   </article>
   </div>
