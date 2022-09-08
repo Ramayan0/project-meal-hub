@@ -13,7 +13,7 @@ body {
 .word {
   text-align: center;
   text-transform: uppercase;
-  color: #e09018;
+  color: #c59d5f;
   font-size: 20px;
 }
 .btn-container {
@@ -25,7 +25,7 @@ select {
   width: 300px;
   padding: 12px;
   border: 0 !important;
-  background-color: #e09018;
+  background-color: #c59d5f;
 }
 
 .cards {
@@ -55,9 +55,9 @@ select {
 }
 .photo {
   object-fit: cover;
-  height: 200px;
-  width: 400;
-  /* border: 0.25rem solid #c59d5f;  */
+  height: 250px;
+
+  border: 0.25rem solid #c59d5f;
   border-radius: 0.5rem;
   float: left;
   width: 240px;
@@ -66,7 +66,12 @@ select {
 header {
   display: flex;
   justify-content: space-between;
+  width: 340px;
   border-bottom: 0.5px dotted var(--clr-grey-5);
+}
+.content {
+  position: relative;
+  top: 50px;
 }
 h4 {
   margin-top: auto;
@@ -87,7 +92,7 @@ h4 {
     max-width: 40rem;
   }
   .photo {
-    height: 200px;
+    height: 190px;
   }
 }
 @media screen and (min-width: 100px) {

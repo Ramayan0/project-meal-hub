@@ -43,7 +43,7 @@ function renderOneMeal(menus) {
       <span class="fa fa-heart"></span>
     </span>
   </button>
-
+  </div>
   </div>
   </article>
   </div>
